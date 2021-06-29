@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="js/three.js"></script>
+      <script src="js/OrbitControls.js"></script>
+      <link rel="stylesheet" type="text/css" href="proj1.css">
+      <title>Experiment 1:Points And Co-ordinate System</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="HandheldFriendly" content="true">
+   </head>
+   <body onload="d3()">
+      <div class="container">
+         <script src="proj1.css"></script>
+         <canvas id="myCanvas5">This text is displayed if your browser does not support HTML5 Canvas.</canvas>
+      </div>
+      <div class="splitright" align="center">
+         <h1> Experiment 1:Points And Co-ordinate System</h1>
+         <button class="collapsible">Display</button>
+         <div class="content" >
+            <br>
+            <input type="radio" onclick="grid()">Grid Lines<br>
+            <input  type="radio" onclick="d3rsv()">reset view
+            <input type="radio" onclick="rd()">Reload
+            <br>
+         </div>
+         <br>
+         <div class="instr">
+            <p class="header">Points and Co-ordinate Systems</p>
+            <p id="demo" class="space" style="font-size: 12px; font-weight: 500"> Introduction to the interface : This experiment is designed to teach how points and co-ordinate systems are represented in computer graphics. The display on your left shows the world with each shape and co-ordinate system that you create. The absolute co-ordinate system and XY grid is displayed for reference.These instructions are in a series of steps. Use the Next and Previous buttons to navigate.</p>
+            <button class="button2" onclick="prev()">previous</button>
+            <button class="button2" onclick="nxt()">next</button>
+         </div>
+         <br>  
+         enter valid co-ordinates and scaling factor:
+         <form >x:
+            <input name="x" id="x" >
+            y:
+            <input name="y" id="y">
+            z:
+            <input name="z" id="z">
+            w:
+            <input name="w" id="w">
+         </form>
+         <div>
+            <button class="button" onclick="io();return false">Feed Co-Ordinates</button>
+            <button class="button" onclick="init()">select a point</button>
+            <br>
+            <br>
+            <button class="collapsible">New</button>
+            <div class="content">
+               <br>
+               <button class="button" onclick="shapec()">Cube</button>
+               <button class="button" onclick="shaped()">Dodecahedron</button>  
+               <button class="button" onclick="shapei()">Icosahedron</button>
+               <br><br>
+               <div class="instr1">
+                  <form >x:
+                     <input name="xsx" id="xsx" >
+                     <input name="xsy" id="xsy" >
+                     <br>y:
+                     <input name="ysx" id="ysx">
+                     <input name="ysy" id="ysy">
+                     <br>w:
+                     <input name="ws" id="ws"><br>
+                     u: <input name="u" id="u">
+                     v:<input name="v" id="v"><br>
+                     <br>
+                  </form>
+                  <button onclick="skewcoord()" class="button">Feed Skew Co-Ordinates</button>
+               </div>
+            </div>
+            <br>
+            <p id="error" class="space" style="color:black;font-size: 28px; font-weight: 500"></p>
+            <div class="instr1">
+               <div> Current Point's Absolute Co-Ordinates</div>
+               <span>Homogeneous : </span><span class="coord" id="disp1">0,0,0,0</span>
+               <br> <span>Cartesian : </span><span class="coord" id="disp2">0,0,0</span>
+            </div>
+            <br>
+            <span style="color:black;font-size: 15px; font-weight: 500"> (o represets the origin)</span>
+            <br>
+            <span style="color:red;font-size: 13px; font-weight: 500">Red line: X-axis</span>
+            <span style="color:green;font-size: 13px; font-weight: 500">Green line: Y-axis</span>
+            <span style="color:blue;font-size: 13px; font-weight: 500">Blue line: Z-axis</span>
+            <br><br>
+         </div>
+       </div>
+      <script src="proj1.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>
